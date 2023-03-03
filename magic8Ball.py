@@ -5,22 +5,21 @@ responses = ["Yes", "No", "Probably", "Maybe", "I don't think so", "Perhaps",
 
 print("Welcome to the Magic 8 ball!")
 
+def question():
+  input("Ask me a question: ")
+  print responses[randint(0, 7)]
+
+question()
 while True:
-    question = input("Ask me a question: ")
-    print responses[randint(0, 7)]
+  play = input("Would you like to play again? (Y/N) ")
+  print ""
 
-    while True:
-        play = input("Would you like to play again? (Y/N) ")
-        print ""
+  if play == "Y" or play == "y":
+      question()
 
-        if play == "Y" or play == "y":
-            continue
+  elif play == "N" or play == "n":
+      print("Goodbye!")
+      break
 
-        elif play == "N" or play == "n":
-            print("Goodbye!")
-            break
-
-        else:
-            print("I didn't quite catch that.")
-
-    break
+  else:
+      print("I didn't quite catch that.")
